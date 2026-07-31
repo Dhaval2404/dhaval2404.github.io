@@ -183,7 +183,7 @@
                     <span
                             class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Engineer.</span>
                 </h1>
-                <h2 class="text-xl md:text-xl text-slate-body font-medium max-w-2xl">11+ years building secure and
+                <h2 class="text-lg md:text-lg text-slate-body font-medium max-w-2xl">11+ years building secure and
                     scalable mobile platforms.
                     Currently modernizing critical payment systems for <b>Mauritius Commercial Bank</b>.</h2>
             </div>
@@ -274,38 +274,19 @@
             <div class="grid lg:grid-cols-[3fr_2fr] gap-12 mb-16">
                 <div>
                     <h2 class="text-3xl font-bold mb-6 tracking-tight text-slate-heading">Professional Summary</h2>
-                    <p class="text-lg text-slate-body leading-relaxed">
+                    <p class="text-base text-slate-body leading-relaxed">
                         <strong class="text-primary">Lead Mobile Engineer</strong> with
-                        <strong>11+ years of experience</strong> architecting, leading, and delivering
-                        <strong>enterprise-grade mobile applications</strong> across the
-                        <strong>Banking</strong> and <strong>Healthcare</strong> domains.
+                        11+ years of experience architecting, leading, and delivering
+                        enterprise-grade mobile applications across the
+                        Banking and Healthcare domains. <br/><br/>
 
-                        Extensive experience with
-                        <strong>Android</strong>,
-                        <strong>Flutter</strong>, and
-                        <strong>Kotlin Multiplatform (KMP)</strong>, including large-scale mobile ecosystems and
-                        <strong>Backbase digital banking platforms</strong>.
+                        Extensive experience with Android, Flutter, and Kotlin Multiplatform (KMP), including large-scale mobile ecosystems and Backbase digital banking platforms. <br/><br/>
 
-                        Specialized in
-                        <strong>Kotlin</strong>,
-                        <strong>Java</strong>,
-                        <strong>Dart</strong>,
-                        <strong>Jetpack Compose</strong>,
-                        <strong>Spring Boot</strong>,
-                        <strong>Firebase</strong>,
-                        <strong>Clean Architecture</strong>,
-                        <strong>CI/CD</strong>, and
-                        <strong>Secure Mobile Development</strong>.
+                        Specialized in Kotlin, Java, Dart, Jetpack Compose, Spring Boot, Firebase, Clean Architecture,
+                        CI/CD, and Secure Mobile Development.<br/><br/>
 
-                        Proven track record in
-                        <strong>Technical Leadership</strong>,
-                        <strong>Solution Architecture</strong>,
-                        <strong>Performance Optimization</strong>,
-                        <strong>Code Quality</strong>, and
-                        <strong>Mentoring High-Performing Engineering Teams</strong> to deliver scalable, maintainable, and business-critical solutions.
+                        Proven track record in Technical Leadership, Solution Architecture, Performance Optimization, Code Quality, and Mentoring High-Performing Engineering Teams to deliver scalable, maintainable, and business-critical solutions.
                     </p>
-                    <p class="hidden text-lg text-slate-body leading-relaxed">Lead Mobile Engineer with 11+ years of experience leading and contributing to enterprise Android and Flutter applications across Banking and Healthcare domains. Possesses strong expertise with Backbase digital banking platforms and experience working on large-scale enterprise mobile solutions. Expert in Kotlin, Java, Dart, Flutter, Jetpack Compose, Clean Architecture, CI/CD, and secure mobile development, with a strong focus on technical leadership, code quality, and mentoring engineers.&nbsp;</p>
-                    <p class="hidden text-lg text-slate-body leading-relaxed">Lead Mobile Engineer with 11+ years of experience architecting, leading, and delivering enterprise-grade Android, Flutter, and Kotlin Multiplatform (KMP) applications in Banking and Healthcare domains. Extensive experience with Backbase digital banking platforms and large-scale mobile ecosystems. Specialized in Kotlin, Java, Dart, Flutter, Jetpack Compose, Kotlin Multiplatform, Spring Boot, Firebase, Clean Architecture, CI/CD, and secure mobile development. Proven track record in technical leadership, solution architecture, performance optimization, code quality, and mentoring high-performing engineering teams.</p>
                 </div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1108,8 +1089,7 @@
     </footer>
 </main>
 <!-- AI Assistant -->
-<aside class="fixed bottom-5 right-5 z-50 sm:bottom-6 sm:right-6 hidden">
-<aside class="fixed bottom-5 right-5 z-50 sm:bottom-6 sm:right-6 hidden">
+<aside class="fixed bottom-5 right-5 z-50 sm:bottom-6 sm:right-6">
     <section aria-label="Dhaval's AI Assistant"
              class="hidden mb-4 w-[calc(100vw-2.5rem)] max-w-sm overflow-hidden rounded-2xl border border-border-light bg-white shadow-2xl"
              id="chat-panel">
@@ -1205,7 +1185,7 @@
     const chatInput = document.getElementById('chat-input');
     const chatMessages = document.getElementById('chat-messages');
     const chatSubmitButton = chatForm.querySelector('button[type="submit"]');
-    const chatEndpoint = 'http://localhost:3000/chat';
+    const chatEndpoint = 'https://api.dhaval2404.com/v1/chat';
     const chatSessionStorageKey = 'dhaval-ai-session-id';
     const chatSessionId = getOrCreateChatSessionId();
 
@@ -1247,11 +1227,11 @@
         const response = await fetch(chatEndpoint, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'X-Session-Id': chatSessionId,
             },
             body: JSON.stringify({
                 message: question,
-                sessionId: chatSessionId
             })
         });
 
