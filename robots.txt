@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dhaval2404.com/sitemap.xml
