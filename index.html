@@ -13,7 +13,7 @@
     <meta content="Dhavalkumar Patel" name="author"/>
     <meta content="index, follow" name="robots"/>
     <!-- Canonical URL -->
-    <link href="https://dhaval2404.github.io/" rel="canonical"/>
+    <link href="https://dhaval2404.com/" rel="canonical"/>
     <!-- Favicons -->
     <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"  />
     <link href="assets/favicon.ico" rel="icon" sizes="any"/>
@@ -29,7 +29,7 @@
     <meta content="Dhavalkumar Patel - Lead Mobile Engineer" property="og:title"/>
     <meta content="Building scalable mobile and backend solutions using Android, Kotlin, Flutter, and Spring Boot. Specialized in Banking, and Healthcare platforms."
           property="og:description"/>
-    <meta content="https://dhaval2404.github.io/" property="og:url"/>
+    <meta content="https://dhaval2404.com/" property="og:url"/>
     <meta content="assets/og-image.png" property="og:image"/>
     <meta content="Building scalable mobile and backend solutions using Android, Kotlin, Flutter, and Spring Boot." property="og:image:alt"/>
     <meta content="1200" property="og:image:width"/>
@@ -47,9 +47,9 @@
     <meta content="Patel" property="profile:last_name"/>
     <meta content="dhaval2404" property="profile:username"/>
     <meta content="@dhaval2404" name="twitter:site"/>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap"
-          rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
           rel="stylesheet">
@@ -64,8 +64,6 @@
         gtag('js', new Date());
         gtag('config', 'G-CMWZPSDTY3');
     </script>
-    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
         tailwind.config = {
             theme: {
@@ -111,6 +109,7 @@
                     "@type": "Person",
                     "@id": "https://dhaval2404.com",
                     "name": "Dhavalkumar Patel",
+                    "alternateName": "Dhaval2404",
                     "jobTitle": "Lead Mobile Engineer",
                     "url": "https://dhaval2404.com/",
                     "image": "https://dhaval2404.com/assets/og-image.png",
@@ -118,7 +117,9 @@
                     "sameAs": [
                         "https://x.com/dhaval2404",
                         "https://www.linkedin.com/in/dhaval2404/",
-                        "https://github.com/Dhaval2404"
+                        "https://github.com/Dhaval2404",
+                        "https://dhaval2404.com/",
+                        "https://dhaval2404.github.io/"
                     ],
                     "knowsAbout": [
                         "Kotlin", "Java", "Dart", "Flutter", "Kotlin Multiplatform",
@@ -152,10 +153,15 @@
 <nav aria-label="Primary navigation"
      class="fixed top-0 w-full z-50 glass-nav border-b border-border-light transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-            <div class="size-8 rounded-lg bg-primary flex items-center justify-center text-white font-bold">DP</div>
-            <span class="font-semibold text-lg tracking-tight text-slate-heading hidden sm:block">Dhavalkumar Patel</span>
-        </div>
+        <a href="/" class="flex items-center gap-3">
+            <div class="size-8 rounded-lg bg-primary flex items-center justify-center text-white font-bold">
+                DP
+            </div>
+           <span class="font-semibold text-lg tracking-tight text-slate-heading hidden sm:block">
+                Dhavalkumar Patel
+            </span>
+        </a>
+
         <div class="hidden md:flex items-center gap-8">
             <a class="text-sm font-medium hover:text-primary transition-colors text-slate-500" href="#home"
                onclick="gtag('event', 'menu_home_click');">Home</a>
@@ -168,18 +174,20 @@
             <a class="text-sm font-medium hover:text-primary transition-colors text-slate-500" href="#education-certs"
                onclick="gtag('event', 'menu_education_click');">Education</a>
         </div>
-        <a aria-label="Connect over Email with Dhavalkumar Patel"
-           class="hidden md:inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-white shadow-lg shadow-blue-500/20 transition-colors hover:bg-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-           href="mailto:dhaval2404@hotmail.com"
-           onclick="gtag('event', 'menu_contact_click');">
-            <span class="material-symbols-outlined">mail</span>Let's connect </a>
-        <button aria-controls="mobile-menu"
-                aria-expanded="false"
-                aria-label="Open navigation menu"
-                class="md:hidden inline-flex size-11 items-center justify-center rounded-lg border border-border-light bg-white text-slate-heading hover:bg-slate-50 transition-colors"
-                id="mobile-menu-button" type="button">
-            <span class="material-symbols-outlined" aria-hidden="true">menu</span>
-        </button>
+        <div class="flex items-center gap-3 md:gap-6">
+            <a aria-label="Connect over Email with Dhavalkumar Patel"
+               class="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-white shadow-lg shadow-blue-500/20 transition-colors hover:bg-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 md:px-6 md:py-3"
+               href="mailto:dhaval2404@hotmail.com"
+               onclick="gtag('event', 'menu_contact_click');">
+                <span class="material-symbols-outlined">mail</span><span class="sm:inline">Let's connect</span> </a>
+            <button aria-controls="mobile-menu"
+                    aria-expanded="false"
+                    aria-label="Open navigation menu"
+                    class="md:hidden inline-flex size-11 items-center justify-center rounded-lg border border-border-light bg-white text-slate-heading hover:bg-slate-50 transition-colors"
+                    id="mobile-menu-button" type="button">
+                <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+            </button>
+        </div>
     </div>
     <div id="mobile-menu" class="hidden md:hidden border-t border-border-light bg-white/95 px-6 py-5 shadow-lg">
         <div class="max-w-7xl mx-auto flex flex-col gap-1">
@@ -193,9 +201,6 @@
                href="#experience" onclick="gtag('event', 'menu_experience_click');">Experience</a>
             <a class="mobile-menu-link rounded-lg px-4 py-3 font-medium text-slate-600 hover:bg-blue-50 hover:text-primary"
                href="#education-certs" onclick="gtag('event', 'menu_education_click');">Education</a>
-            <a class="mt-3 inline-flex justify-center rounded-full bg-primary px-5 py-3 text-sm font-medium text-white shadow-lg shadow-blue-500/20 hover:bg-blue-600"
-               href="mailto:dhaval2404@hotmail.com" onclick="gtag('event', 'menu_contact_click');">Let's
-                connect</a>
         </div>
     </div>
 </nav>
@@ -435,8 +440,6 @@
                             class="text-xs font-medium px-2 py-1 bg-slate-100 rounded text-slate-600 border border-slate-200">MySQL</span>
                     <span
                             class="text-xs font-medium px-2 py-1 bg-slate-100 rounded text-slate-600 border border-slate-200">PostgreSQL</span>
-                    <span
-                            class="text-xs font-medium px-2 py-1 bg-slate-100 rounded text-slate-600 border border-slate-200">Docker</span>
                 </div>
             </div>
             <!-- Testing -->
