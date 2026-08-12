@@ -1,4 +1,4 @@
-import type {Metadata} from "next";
+import type {Metadata, Viewport} from "next";
 import Script from "next/script";
 import type {ReactNode} from "react";
 import "./globals.css";
@@ -53,6 +53,11 @@ export const metadata: Metadata = {
         apple: SITE_META.FAVICONS.APPLE,
     },
     manifest: SITE_META.WEB_MANIFEST,
+};
+
+export const viewport: Viewport = {
+    themeColor: "#4285f4",
+    colorScheme: "light",
 };
 
 const structuredData = {
