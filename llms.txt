@@ -1,0 +1,103 @@
+# Dhavalkumar Patel - Lead Mobile Engineer
+
+**Website:** https://dhaval2404.com/
+**Email:** dhaval2404@hotmail.com
+**Role:** Lead Mobile Engineer
+
+## Summary
+
+Lead Mobile Engineer with 11+ years of experience architecting, leading, and delivering enterprise-grade mobile applications across Banking and Healthcare domains. Specialized in Kotlin, Java, Dart, Flutter, Kotlin Multiplatform (KMP), Jetpack Compose, Spring Boot, Firebase, Clean Architecture, CI/CD, and Secure Mobile Development.
+
+Proven track record in Technical Leadership, Solution Architecture, Performance Optimization, Code Quality, and Mentoring High-Performing Engineering Teams.
+
+## Professional Experience
+
+### Xebia IT Architects India — Lead Consultant (Jul 2025 – Present)
+Engaged with Mauritius Commercial Bank (MCB) as a Backbase Engineer delivering digital banking solutions, platform upgrades, and feature enhancements.
+- Customized and extended Backbase banking journeys to meet client-specific business requirements
+- Optimized code and UI flows, improving performance and reducing load times by 20–25%
+- Improved automated test coverage by ~20%, increasing release stability
+- Reduced application crash rate by ~30% through refactoring and monitoring
+- Leveraged GitHub Copilot to reduce implementation time for routine code by 20–30%
+- Technologies: Backbase, Android, Kotlin, Mockk, Espresso, JUnit, GitHub Copilot, Azure DevOps
+
+### KernelEquity Technologies — Staff Engineer (Oct 2023 – Jul 2025)
+Developed enterprise applications for Legal and Healthcare domains. Led system design for Android and Flutter applications.
+- Led system design for Android and Flutter platforms, ensuring scalable architecture
+- Worked on Healthcare applications adhering to HL7, HIPAA, and GDPR compliance
+- Implemented secure mobile practices (encryption, secure APIs, kiosk), reducing security issues
+- Automated CI/CD workflows, reducing build and release effort by 40%
+- Technologies: Android, Flutter, Firebase, GitHub Actions, Fastlane, Google Maps, In-App Purchase
+
+### Mobiquity Inc (Hexaware Technologies) — Senior Android Developer (Jun 2021 – Oct 2023)
+Engaged with Backbase through Mobiquity as a Sr. Android Developer on the Customer Success team delivering retail & business solutions for US banks.
+- Customized Backbase banking journeys and integrated with backend services
+- Developed reusable UI components and shared modules to accelerate feature delivery
+- Optimized application performance, reducing startup time and improving responsiveness
+- Technologies: Backbase, Android, Kotlin, Mockk, Espresso, Fastlane, GitHub Actions, Docker, Spring Boot
+
+### DevDigital LLC — Senior Android Developer (Nov 2017 – Jun 2021)
+Delivered consumer and enterprise Android applications using Java and Kotlin.
+- Integrated third-party SDKs (Maps, Payments, Media, KYC), reducing development time by 25%
+- Built reusable libraries and modules, improving development efficiency by 30%
+- Technologies: Android, Flutter, Java, Kotlin, PayPal
+
+### Niyantras — Senior Software Engineer (Dec 2014 – Nov 2017)
+Developed Android apps for IoT home automation systems.
+- Developed Android applications for IoT-based home automation using Java and Android SDK
+- Implemented real-time device control and offline-first data handling
+- Technologies: Java, Android, Spring Boot, Internet of Things, Home Automation
+
+## Education
+
+**Bachelor of Engineering** — Gujarat Technological University, Ahmedabad (2013)
+Major in Electronics and Communication Engineering
+
+## Certifications
+
+- **Backbase Certified Developer** — Certified in building, customizing, maintaining and upgrading digital banking applications using the Backbase platform
+
+## Tech Stack
+
+### Languages
+Kotlin, Java, Dart, JavaScript, TypeScript, Swift
+
+### Mobile UI
+Flutter, Android Native, Jetpack Compose, Kotlin Multiplatform, SwiftUI
+
+### Backend Development
+Spring Boot, Node.js, REST APIs, SQLite, MySQL, PostgreSQL
+
+### Testing & Quality
+JUnit, Mockito, Mockk, Espresso, Playwright, Firebase Test Lab, SonarQube, ktlint, detekt
+
+### Cloud & DevOps
+GitHub Actions, Fastlane, Docker, Firebase, Monitoring
+
+### Security
+OWASP, Encryption, Obfuscation, RASP, DexGuard, Secure Coding Practices, DRM
+
+## Featured Projects
+
+### MCB Juice
+Digital banking platform serving millions of customers with secure transaction journeys, onboarding flows, and Backbase-powered banking experiences.
+- Tech: Kotlin, Android, Backbase, JUnit, Espresso
+- Google Play: https://play.google.com/store/apps/details?id=com.mcbmu.juice&hl=en_IN
+- Website: https://mcb.mu/juice
+
+### Eastern Bank Mobile Banking
+Mobile banking app with features to manage finances while on the go.
+- Tech: Kotlin, Android, Backbase, JUnit, Espresso
+- Google Play: https://play.google.com/store/apps/details?id=com.eastern.bank&hl=en_IN
+- Website: https://www.easternbank.com/
+
+### Engage By Clarity
+Tablet-based platform designed to improve inpatient care, streamline staff workflows, and reduce administrative stress.
+- Tech: Android, Kotlin, Jetpack Compose, Kiosk, Android MDM
+- Website: https://www.claritybhs.com/
+
+## Social Links
+
+- **Twitter/X:** https://x.com/dhaval2404
+- **LinkedIn:** https://www.linkedin.com/in/dhaval2404/
+- **GitHub:** https://github.com/Dhaval2404
