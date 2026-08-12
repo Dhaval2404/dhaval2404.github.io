@@ -1,0 +1,68 @@
+export const techCategories = [
+  {
+    title: "Languages",
+    icon: "code",
+    color: "bg-blue-50 text-blue-600",
+    skills: ["Kotlin", "Java", "Dart", "JavaScript", "TypeScript", "Swift"],
+  },
+  {
+    title: "Mobile UI",
+    icon: "smartphone",
+    color: "bg-purple-50 text-purple-600",
+    skills: [
+      "Flutter",
+      "Android Native",
+      "Jetpack Compose",
+      "Kotlin Multiplatform",
+      "SwiftUI",
+    ],
+  },
+  {
+    title: "Backend Development",
+    icon: "database",
+    color: "bg-blue-50 text-blue-600",
+    skills: [
+      "Spring Boot",
+      "Node.js",
+      "REST APIs",
+      "SQLite",
+      "MySQL",
+      "PostgreSQL",
+    ],
+  },
+  {
+    title: "Testing & Quality",
+    icon: "fact_check",
+    color: "bg-teal-50 text-teal-600",
+    skills: [
+      "JUnit",
+      "Mockito / Mockk",
+      "Espresso",
+      "Playwright",
+      "Firebase Test Lab",
+      "SonarQube",
+      "ktlint",
+      "detekt",
+    ],
+  },
+  {
+    title: "Cloud & DevOps",
+    icon: "deployed_code",
+    color: "bg-pink-50 text-pink-600",
+    skills: ["GitHub Actions", "Fastlane", "Docker", "Firebase", "Monitoring"],
+  },
+  {
+    title: "Security",
+    icon: "security",
+    color: "bg-red-50 text-red-600",
+    skills: [
+      "OWASP",
+      "Encryption",
+      "Obfuscation",
+      "RASP",
+      "DexGuard",
+      "Secure Coding Practices",
+      "DRM",
+    ],
+  },
+];

@@ -1,0 +1,54 @@
+name: Deploy Docker Compose
+description: Copy compose.yml to VPS and deploy using Docker Compose
+
+inputs:
+  source:
+    description: "The path to the compose.yml file to copy."
+    required: true
+
+  target:
+    description: "The path on the VPS where the compose.yml file will be copied."
+    required: true
+
+  compose-file:
+    default: "compose.yml"
+    description: "The path to the compose.yml file on the VPS."
+    required: true
+
+runs:
+  using: composite
+
+  steps:
+    - name: Copy docker compose file
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ env.VPS_HOST }}
+        username: ${{ env.VPS_USER }}
+        key: ${{ env.VPS_SSH_KEY }}
+        passphrase: ${{ env.VPS_SSH_PASSPHRASE }}
+        source: ${{ inputs.source }}
+        target: ${{ inputs.target }}
+        strip_components: 1
+
+    - name: Deploy to VPS
+      uses: appleboy/ssh-action@v1.2.2
+      env:
+        GHCR_TOKEN: ${{ env.GHCR_TOKEN }}
+        GHCR_USERNAME: ${{ env.GHCR_USERNAME }}
+
+      with:
+        host: ${{ env.VPS_HOST }}
+        username: ${{ env.VPS_USER }}
+        key: ${{ env.VPS_SSH_KEY }}
+        passphrase: ${{ env.VPS_SSH_PASSPHRASE }}
+        script: |
+          cd "${{ inputs.target }}"
+
+          echo "$GHCR_TOKEN" | docker login ghcr.io \
+            -u "$GHCR_USERNAME" \
+            --password-stdin
+
+          docker compose pull
+          docker compose up -d
+
+          docker image prune -f

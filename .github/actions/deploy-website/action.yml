@@ -1,0 +1,33 @@
+name: Deploy Static Website
+description: Deploy static website to VPS using SCP
+
+inputs:
+  deploy-path:
+    description: Remote deployment directory
+    required: true
+
+runs:
+  using: composite
+
+  steps:
+    - name: Remove old deployment
+      uses: appleboy/ssh-action@v1.2.0
+      with:
+        host: ${{ env.VPS_HOST }}
+        username: ${{ env.VPS_USER }}
+        key: ${{ env.VPS_SSH_KEY }}
+        passphrase: ${{ env.VPS_SSH_PASSPHRASE }}
+        script: |
+          mkdir -p "${{ inputs.deploy-path }}"
+          rm -rf "${{ inputs.deploy-path }}"/*
+
+    - name: Upload website
+      uses: appleboy/scp-action@v1
+      with:
+        host: ${{ env.VPS_HOST }}
+        username: ${{ env.VPS_USER }}
+        key: ${{ env.VPS_SSH_KEY }}
+        passphrase: ${{ env.VPS_SSH_PASSPHRASE }}
+        source: "out/*"
+        target: "${{ inputs.deploy-path }}"
+        strip_components: 1
