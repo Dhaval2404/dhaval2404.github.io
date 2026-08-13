@@ -104,7 +104,7 @@ export default function ChatAssistant() {
             {isOpen && (
                 <section
                     aria-label="Dhaval's AI Assistant"
-                    className="mb-4 w-[calc(100vw-2.5rem)] max-w-sm overflow-hidden rounded-2xl border border-border-light bg-white shadow-2xl"
+                    className="fixed inset-0 flex w-full flex-col overflow-hidden bg-white sm:static sm:mb-4 sm:block sm:w-[calc(100vw-2.5rem)] sm:max-w-sm sm:rounded-2xl sm:border sm:border-border-light sm:shadow-2xl"
                 >
                     <header className="flex items-center justify-between bg-primary px-5 py-4 text-white">
                         <div className="flex items-center gap-3">
@@ -135,7 +135,7 @@ export default function ChatAssistant() {
                     <div
                         aria-live="polite"
                         role="log"
-                        className="flex h-72 flex-col gap-3 overflow-y-auto bg-slate-50 p-4 text-sm"
+                        className="flex flex-1 flex-col gap-3 overflow-y-auto bg-slate-50 p-4 text-sm sm:h-82 sm:flex-none"
                     >
                         {messages.map((message, index) => (
                             <div
