@@ -99,12 +99,15 @@ export default function HeroSection() {
             <p className="pl-4">)</p>
             <p>&#125;</p>
           </div>
-          <span
-            className="material-symbols-outlined absolute bottom-0 right-0 p-8 text-6xl! text-primary opacity-10 rotate-12"
-            aria-hidden="true"
+
+          <svg
+              className="absolute bottom-8 right-8 size-16 rotate-12 text-primary opacity-10"
+              viewBox="0 -960 960 960"
+              fill="currentColor"
+              aria-hidden="true"
           >
-            developer_mode
-          </span>
+            <path d="M280-120v-720 720Zm226-604q10.15-10.15 10.15-25.23T506-774.46q-10.15-10.15-25.23-10.15t-25.23 10.15q-10.15 10.15-10.15 25.23T455.54-724q10.15 10.15 25.23 10.15T506-724ZM292.31-60q-29.92 0-51.12-21.19Q220-102.39 220-132.31v-695.38Q220-858 241-879q21-21 51.31-21h376.92q29.92 0 51.11 21.19 21.2 21.2 21.2 51.12v126.31q16.46 4.3 27.46 17.19 11 12.88 11 29.96v75.38q0 17.08-11 29.97-11 12.88-27.46 17.19v94.38h-60v-390.38q0-5.39-3.46-8.85-3.47-3.46-8.85-3.46H292.31q-5.39 0-8.85 3.46t-3.46 8.85v695.38q0 5.39 3.46 8.85t8.85 3.46h89.23v60h-89.23ZM599-80.23 469.23-210 599-339.77 640.77-297l-87 87 87 87L599-80.23Zm171.23 0L728.46-123l87-87-87-87 41.77-42.77L900-210 770.23-80.23Z"/>
+          </svg>
         </div>
       </div>
     </section>
