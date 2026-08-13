@@ -1,6 +1,6 @@
 "use client";
 
-import {FormEvent, Suspense, lazy, useEffect, useRef, useState} from "react";
+import {CSSProperties, FormEvent, Suspense, lazy, useEffect, useRef, useState} from "react";
 import {APP_CONFIG} from "@/app/lib/config";
 
 const ReactMarkdown = lazy(() => import("react-markdown"));
@@ -26,6 +26,10 @@ export default function ChatAssistant() {
     const [isOpen, setIsOpen] = useState(false);
     const [question, setQuestion] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [mobileViewport, setMobileViewport] = useState({
+        height: "100dvh",
+        offsetTop: "0px",
+    });
     const [messages, setMessages] = useState<Message[]>([
         {
             sender: "assistant",
@@ -36,6 +40,32 @@ export default function ChatAssistant() {
 
     useEffect(() => {
         if (isOpen) inputRef.current?.focus();
+    }, [isOpen]);
+
+    useEffect(() => {
+        if (!isOpen || !window.matchMedia("(max-width: 639px)").matches) return;
+
+        const previousOverflow = document.body.style.overflow;
+        const updateViewport = () => {
+            const viewport = window.visualViewport;
+            setMobileViewport({
+                height: `${viewport?.height ?? window.innerHeight}px`,
+                offsetTop: `${viewport?.offsetTop ?? 0}px`,
+            });
+        };
+
+        document.body.style.overflow = "hidden";
+        updateViewport();
+        window.visualViewport?.addEventListener("resize", updateViewport);
+        window.visualViewport?.addEventListener("scroll", updateViewport);
+        window.addEventListener("resize", updateViewport);
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            window.visualViewport?.removeEventListener("resize", updateViewport);
+            window.visualViewport?.removeEventListener("scroll", updateViewport);
+            window.removeEventListener("resize", updateViewport);
+        };
     }, [isOpen]);
 
     useEffect(() => {
@@ -104,9 +134,13 @@ export default function ChatAssistant() {
             {isOpen && (
                 <section
                     aria-label="Dhaval's AI Assistant"
-                    className="fixed inset-0 flex w-full flex-col overflow-hidden bg-white sm:static sm:mb-4 sm:block sm:w-[calc(100vw-2.5rem)] sm:max-w-sm sm:rounded-2xl sm:border sm:border-border-light sm:shadow-2xl"
+                    className="fixed inset-x-0 top-0 flex h-[var(--chat-height)] w-full translate-y-[var(--chat-offset-top)] flex-col overflow-hidden bg-white sm:static sm:mb-4 sm:block sm:h-auto sm:w-[calc(100vw-2.5rem)] sm:max-w-sm sm:translate-y-0 sm:rounded-2xl sm:border sm:border-border-light sm:shadow-2xl"
+                    style={{
+                        "--chat-height": mobileViewport.height,
+                        "--chat-offset-top": mobileViewport.offsetTop,
+                    } as CSSProperties}
                 >
-                    <header className="flex items-center justify-between bg-primary px-5 py-4 text-white">
+                    <header className="flex shrink-0 items-center justify-between bg-primary px-5 py-4 text-white">
                         <div className="flex items-center gap-3">
               <span
                   className="material-symbols-outlined rounded-full bg-white/15 p-2"
@@ -135,7 +169,7 @@ export default function ChatAssistant() {
                     <div
                         aria-live="polite"
                         role="log"
-                        className="flex flex-1 flex-col gap-3 overflow-y-auto bg-slate-50 p-4 text-sm sm:h-82 sm:flex-none"
+                        className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto bg-slate-50 p-4 text-sm sm:h-82 sm:flex-none"
                     >
                         {messages.map((message, index) => (
                             <div
@@ -158,7 +192,7 @@ export default function ChatAssistant() {
                             </div>
                         )}
                     </div>
-                    <div className="border-t border-border-light bg-white p-4">
+                    <div className="shrink-0 border-t border-border-light bg-white p-4">
                         <div className="mb-3 flex gap-2 overflow-x-auto pb-1">
                             {chatSuggestions.map((suggestion) => (
                                 <button
@@ -185,7 +219,7 @@ export default function ChatAssistant() {
                                 disabled={isLoading}
                                 placeholder="Ask a question..."
                                 required
-                                className="min-w-0 flex-1 rounded-full border-slate-300 px-4 py-2.5 text-sm focus:border-primary focus:ring-primary"
+                                className="min-w-0 flex-1 caret-slate-900 rounded-full border-slate-300 px-4 py-2.5 text-sm focus:border-primary focus:ring-primary appearance-none bg-clip-padding"
                             />
                             <button
                                 type="submit"

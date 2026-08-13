@@ -14,14 +14,20 @@ export default function SiteHeader() {
       className="fixed top-0 z-50 w-full border-b border-border-light glass-nav"
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-        <Link href="/#home" className="flex items-center gap-3">
-          <span className="flex size-8 items-center justify-center rounded-lg bg-primary font-bold text-white">
-            DP
-          </span>
+        <a href="/#home" className="flex items-center gap-3">
+          <div className="flex size-10 shrink-0 items-center justify-center overflow-hidden">
+            <img
+                src="/favicon.svg"
+                alt="Profile"
+                width={48}
+                height={48}
+                className="size-full object-cover"
+            />
+          </div>
           <span className="hidden text-lg font-semibold tracking-tight text-slate-heading sm:block">
             Dhavalkumar Patel
           </span>
-        </Link>
+        </a>
         <div className="hidden items-center gap-8 md:flex">
           {navigationItems.map((item) => (
             <Link
