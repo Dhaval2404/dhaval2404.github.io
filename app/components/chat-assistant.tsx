@@ -1,8 +1,9 @@
 "use client";
 
-import {FormEvent, useEffect, useRef, useState} from "react";
-import ReactMarkdown from "react-markdown";
+import {FormEvent, Suspense, lazy, useEffect, useRef, useState} from "react";
 import {APP_CONFIG} from "@/app/lib/config";
+
+const ReactMarkdown = lazy(() => import("react-markdown"));
 
 type Message = { sender: "user" | "assistant"; text: string };
 const chatEndpoint = APP_CONFIG.API_BASE_URL
@@ -145,7 +146,9 @@ export default function ChatAssistant() {
                                         : "max-w-[88%] self-start rounded-2xl rounded-bl-md bg-white px-4 py-3 leading-relaxed text-slate-700 shadow-sm"
                                 }
                                     >
-                                        <ReactMarkdown>{message.text}</ReactMarkdown>
+                                        <Suspense fallback={<>{message.text}</>}>
+                                            <ReactMarkdown>{message.text}</ReactMarkdown>
+                                        </Suspense>
                                     </div>
                         ))}
                         {isLoading && (
