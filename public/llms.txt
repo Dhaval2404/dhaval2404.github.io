@@ -2,10 +2,10 @@
 
 > Lead Mobile Engineer with 11+ years building enterprise mobile applications for Banking and Healthcare.
 
-**Website:** https://dhaval2404.com/
-**Email:** dhaval2404@hotmail.com
+**Website:** [https://dhaval2404.com/](https://dhaval2404.com/)
+**Email:** [dhaval2404@hotmail.com](mailto:dhaval2404@hotmail.com)
 **Role:** Lead Mobile Engineer
-**Resume:** https://dhaval2404.com/docs/dhavalkumar-patel-resume-2026.pdf
+**Resume:** [https://dhaval2404.com/docs/dhavalkumar-patel-resume-2026.pdf](https://dhaval2404.com/docs/dhavalkumar-patel-resume-2026.pdf)
 
 ## Summary
 
@@ -90,6 +90,6 @@ Tablet-based platform designed to improve inpatient care, streamline staff workf
 
 ## Social Links
 
-- **Twitter/X:** https://x.com/dhaval2404
-- **LinkedIn:** https://www.linkedin.com/in/dhaval2404/
-- **GitHub:** https://github.com/Dhaval2404
+* **Twitter/X:** [https://x.com/dhaval2404](https://x.com/dhaval2404)
+* **LinkedIn:** [https://www.linkedin.com/in/dhaval2404/](https://www.linkedin.com/in/dhaval2404/)
+* **GitHub:** [https://github.com/Dhaval2404](https://github.com/Dhaval2404)
