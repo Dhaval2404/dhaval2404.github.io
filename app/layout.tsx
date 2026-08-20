@@ -5,6 +5,13 @@ import "./globals.css";
 import {APP_CONFIG} from "./lib/config";
 import {SITE_META} from "./lib/site-meta-config";
 
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+    subsets: ["latin"],
+    display: "swap",
+});
+
 const siteUrl = APP_CONFIG.SITE_URL ?? "https://dhaval2404.com";
 
 export const metadata: Metadata = {
@@ -87,7 +94,7 @@ export default function RootLayout({
                                        children,
                                    }: Readonly<{ children: ReactNode }>) {
     return (
-        <html lang="en">
+        <html lang="en" className={inter.className}>
         <body>
         {children}
         <Script
