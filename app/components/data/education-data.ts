@@ -1,6 +1,5 @@
 export const educationData = {
   title: "Education",
-  icon: "menu_book",
   items: [
     {
       degree: "Bachelor of Engineering",
@@ -13,7 +12,6 @@ export const educationData = {
 
 export const certificationsData = {
   title: "Certifications",
-  icon: "workspace_premium",
   items: [
     {
       title: "Backbase Certified Developer",

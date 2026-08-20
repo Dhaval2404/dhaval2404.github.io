@@ -1,13 +1,23 @@
-export const techCategories = [
+import {LucideIcon} from "lucide-react";
+import { Code, Smartphone, Database, BadgeCheck, Box, ShieldKeyhole } from 'lucide-react';
+
+type TechStackProps = {
+  title: string;
+  icon: LucideIcon;
+  color: string;
+  skills: string[];
+};
+
+export const techCategories: TechStackProps[] = [
   {
     title: "Languages",
-    icon: "code",
+    icon: Code,
     color: "bg-blue-50 text-blue-600",
     skills: ["Kotlin", "Java", "Dart", "JavaScript", "TypeScript", "Swift"],
   },
   {
     title: "Mobile UI",
-    icon: "smartphone",
+    icon: Smartphone,
     color: "bg-purple-50 text-purple-600",
     skills: [
       "Flutter",
@@ -19,7 +29,7 @@ export const techCategories = [
   },
   {
     title: "Backend Development",
-    icon: "database",
+    icon: Database,
     color: "bg-blue-50 text-blue-600",
     skills: [
       "Spring Boot",
@@ -32,7 +42,7 @@ export const techCategories = [
   },
   {
     title: "Testing & Quality",
-    icon: "fact_check",
+    icon: BadgeCheck,
     color: "bg-teal-50 text-teal-600",
     skills: [
       "JUnit",
@@ -47,13 +57,13 @@ export const techCategories = [
   },
   {
     title: "Cloud & DevOps",
-    icon: "deployed_code",
+    icon: Box,
     color: "bg-pink-50 text-pink-600",
     skills: ["GitHub Actions", "Fastlane", "Docker", "Firebase", "Monitoring"],
   },
   {
     title: "Security",
-    icon: "security",
+    icon: ShieldKeyhole,
     color: "bg-red-50 text-red-600",
     skills: [
       "OWASP",

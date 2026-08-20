@@ -1,4 +1,7 @@
 import Link from "next/link";
+import {DownloadIcon, QuestionMarkIcon} from "@/app/components/icons";
+import {ArrowLeft} from "lucide-react";
+import {APP_CONFIG} from "@/app/lib/config";
 
 export default function NotFoundContent() {
   return (
@@ -34,20 +37,15 @@ export default function NotFoundContent() {
             href="/"
             className="inline-flex items-center gap-3 rounded-full bg-primary px-8 py-3.5 font-semibold text-white shadow-lg shadow-blue-500/20 transition-colors hover:bg-blue-600"
           >
-            <span className="material-symbols-outlined" aria-hidden="true">
-              arrow_back
-            </span>
-            Back to Home
+            <ArrowLeft /> Back to Home
           </Link>
-          <Link
-            href="/#projects"
-            className="inline-flex items-center gap-3 rounded-full border border-slate-300 bg-slate-100 px-8 py-3.5 font-semibold text-slate-heading transition-colors hover:bg-slate-200"
+          <a
+              href={APP_CONFIG.RESUME_PATH}
+              download
+              className="inline-flex items-center gap-3 rounded-full border border-slate-300 bg-slate-100 px-8 py-3.5 font-semibold text-slate-heading transition-colors hover:bg-slate-200"
           >
-            View Projects{" "}
-            <span className="material-symbols-outlined" aria-hidden="true">
-              arrow_forward
-            </span>
-          </Link>
+            Download Resume <DownloadIcon className="size-6" />
+          </a>
         </div>
       </div>
 
@@ -101,10 +99,10 @@ export default function NotFoundContent() {
           </div>
 
           <span
-            className="material-symbols-outlined absolute bottom-0 right-0 p-8 text-6xl! text-primary opacity-10 rotate-12 pointer-events-none"
+            className="absolute bottom-0 right-0 p-8 text-6xl! text-primary opacity-10 rotate-12 pointer-events-none"
             aria-hidden="true"
           >
-            question_mark
+            <QuestionMarkIcon className="size-15"/>
           </span>
         </div>
       </div>

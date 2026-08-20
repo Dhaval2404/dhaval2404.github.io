@@ -16,7 +16,7 @@ export default function TechStackSection() {
             <div
               className={`mb-4 flex size-10 items-center justify-center rounded-lg ${category.color}`}
             >
-              <span className="material-symbols-outlined">{category.icon}</span>
+             <category.icon/>
             </div>
             <h3 className="mb-2 text-lg font-bold text-slate-heading">
               {category.title}

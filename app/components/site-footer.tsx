@@ -1,4 +1,5 @@
 import { APP_CONFIG } from "@/app/lib/config";
+import { DownloadIcon, EmailIcon } from "@/app/components/icons";
 
 export default function SiteFooter() {
   return (
@@ -20,9 +21,7 @@ export default function SiteFooter() {
             href={`mailto:${APP_CONFIG.SOCIAL.EMAIL}`}
             className="flex w-full items-center justify-center gap-3 rounded-xl bg-primary px-8 py-4 font-bold text-white shadow-lg shadow-blue-500/20 transition-all hover:bg-blue-600 sm:w-auto"
           >
-            <span className="material-symbols-outlined" aria-hidden="true">
-              mail
-            </span>
+            <EmailIcon className="size-6" />
             Send an Email
           </a>
           <a
@@ -30,9 +29,7 @@ export default function SiteFooter() {
             download
             className="flex w-full items-center justify-center gap-3 rounded-xl bg-slate-800 px-8 py-4 font-bold text-white transition-all hover:bg-slate-700 sm:w-auto"
           >
-            <span className="material-symbols-outlined" aria-hidden="true">
-              download
-            </span>
+            <DownloadIcon className="size-6" />
             Download Resume
           </a>
         </div>

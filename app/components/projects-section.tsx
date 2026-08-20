@@ -15,11 +15,6 @@ export default function ProjectsSection() {
             className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
           >
             <div className="flex h-56 items-center justify-center bg-slate-100">
-              {/*<img src={project.image}*/}
-              {/*     alt={project.alt}*/}
-              {/*     decoding="async"*/}
-              {/*     loading="lazy"*/}
-              {/*     className="h-full w-full object-cover object-top"/>*/}
               <Image
                 src={project.image}
                 alt={project.alt}

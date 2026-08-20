@@ -4,7 +4,6 @@ import type {ReactNode} from "react";
 import "./globals.css";
 import {APP_CONFIG} from "./lib/config";
 import {SITE_META} from "./lib/site-meta-config";
-import "material-symbols";
 
 const siteUrl = APP_CONFIG.SITE_URL ?? "https://dhaval2404.com";
 
@@ -17,7 +16,6 @@ export const metadata: Metadata = {
     authors: [{name: SITE_META.AUTHOR}],
     alternates: {canonical: siteUrl},
     robots: "index,follow",
-    // themeColor: "#2563EB",
     openGraph: {
         type: "website",
         url: siteUrl,

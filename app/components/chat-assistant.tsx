@@ -2,12 +2,12 @@
 
 import {CSSProperties, FormEvent, Suspense, lazy, useEffect, useRef, useState} from "react";
 import {APP_CONFIG} from "@/app/lib/config";
+import {Bot, SendHorizontal, X} from "lucide-react";
 
 const ReactMarkdown = lazy(() => import("react-markdown"));
 
 type Message = { sender: "user" | "assistant"; text: string };
-const chatEndpoint = APP_CONFIG.API_BASE_URL
-    ? `${APP_CONFIG.API_BASE_URL}/v1/chat` : "http://localhost:8080/v1/chat";
+const chatEndpoint = `${APP_CONFIG.API_BASE_URL}/v1/chat`;
 const sessionStorageKey = "dhaval-ai-session-id";
 const chatSuggestions = ["About", "Top skills", "Work Experience"];
 
@@ -124,7 +124,7 @@ export default function ChatAssistant() {
         }
     };
 
-    const submit = (event: FormEvent<HTMLFormElement>) => {
+    const submit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         void askQuestion(question);
     };
@@ -142,11 +142,8 @@ export default function ChatAssistant() {
                 >
                     <header className="flex shrink-0 items-center justify-between bg-primary px-5 py-4 text-white">
                         <div className="flex items-center gap-3">
-              <span
-                  className="material-symbols-outlined rounded-full bg-white/15 p-2"
-                  aria-hidden="true"
-              >
-                smart_toy
+              <span className="flex rounded-full bg-white/15 p-2" aria-hidden="true">
+                <Bot />
               </span>
                             <div>
                                 <h2 className="font-bold">Dhaval&apos;s AI Assistant</h2>
@@ -161,9 +158,7 @@ export default function ChatAssistant() {
                             onClick={() => setIsOpen(false)}
                             className="inline-flex size-9 items-center justify-center rounded-full hover:bg-white/15"
                         >
-              <span className="material-symbols-outlined" aria-hidden="true">
-                close
-              </span>
+              <X aria-hidden="true" />
                         </button>
                     </header>
                     <div
@@ -227,12 +222,7 @@ export default function ChatAssistant() {
                                 aria-label="Send message"
                                 className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-blue-600 disabled:opacity-70"
                             >
-                <span
-                    className="material-symbols-outlined text-xl"
-                    aria-hidden="true"
-                >
-                  send
-                </span>
+                <SendHorizontal className="h-5 w-5" aria-hidden="true" />
                             </button>
                         </form>
                     </div>
@@ -247,8 +237,8 @@ export default function ChatAssistant() {
                 }
                 className="group ml-auto flex size-14 items-center justify-center overflow-hidden rounded-full bg-primary font-bold text-white shadow-xl shadow-blue-500/30 transition-all duration-300 hover:w-64 hover:-translate-y-0.5 hover:justify-start hover:px-5 hover:bg-blue-600"
             >
-        <span className="material-symbols-outlined shrink-0" aria-hidden="true">
-          {isOpen ? "close" : "robot_2"}
+        <span className="shrink-0" aria-hidden="true">
+          {isOpen ? <X /> : <Bot />}
         </span>
                 <span
                     className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 transition-all duration-300 group-hover:ml-2 group-hover:max-w-48 group-hover:opacity-100">

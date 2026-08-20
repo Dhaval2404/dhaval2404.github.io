@@ -4,6 +4,8 @@ import { useState } from "react";
 import { APP_CONFIG } from "@/app/lib/config";
 import { navigationItems } from "./data/navigation";
 import Link from "next/link";
+import { EmailIcon } from "@/app/components/icons";
+import { Menu, X } from "lucide-react";
 
 export default function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,13 +17,11 @@ export default function SiteHeader() {
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <a href="/#home" className="flex items-center gap-3">
-          <div className="flex size-10 shrink-0 items-center justify-center overflow-hidden">
+          <div className="flex size-9 shrink-0 items-center justify-center overflow-hidden">
             <img
-                src="/favicon.svg"
-                alt="Profile"
-                width={48}
-                height={48}
-                className="size-full object-cover"
+              src="/favicon.svg"
+              alt="Profile"
+              className="size-full object-cover"
             />
           </div>
           <span className="hidden text-lg font-semibold tracking-tight text-slate-heading sm:block">
@@ -44,9 +44,7 @@ export default function SiteHeader() {
             href={`mailto:${APP_CONFIG.SOCIAL.EMAIL}`}
             className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-white shadow-lg shadow-blue-500/20 transition-colors hover:bg-blue-600"
           >
-            <span className="material-symbols-outlined" aria-hidden="true">
-              mail
-            </span>
+            <EmailIcon className="size-6" />
             <span>Let&apos;s connect</span>
           </a>
           <button
@@ -58,8 +56,12 @@ export default function SiteHeader() {
             onClick={() => setIsMenuOpen((open) => !open)}
             className="inline-flex size-11 items-center justify-center rounded-lg border border-border-light bg-white text-slate-heading transition-colors hover:bg-slate-50 md:hidden"
           >
-            <span className="material-symbols-outlined" aria-hidden="true">
-              {isMenuOpen ? "close" : "menu"}
+            <span aria-hidden="true">
+              {isMenuOpen ? (
+                  <X className="h-6 w-6" aria-hidden="true" />
+              ) : (
+                  <Menu className="h-6 w-6" aria-hidden="true" />
+              )}
             </span>
           </button>
         </div>
