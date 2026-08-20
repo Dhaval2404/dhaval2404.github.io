@@ -1,10 +1,11 @@
 "use client";
 
-import {CSSProperties, FormEvent, Suspense, lazy, useEffect, useRef, useState} from "react";
+import {CSSProperties, Suspense, lazy, useEffect, useRef, useState, SyntheticEvent} from "react";
 import {APP_CONFIG} from "@/app/lib/config";
 import {Bot, SendHorizontal, X} from "lucide-react";
 
 const ReactMarkdown = lazy(() => import("react-markdown"));
+import remarkBreaks from "remark-breaks";
 
 type Message = { sender: "user" | "assistant"; text: string };
 const chatEndpoint = `${APP_CONFIG.API_BASE_URL}/v1/chat`;
@@ -124,7 +125,7 @@ export default function ChatAssistant() {
         }
     };
 
-    const submit = (event: React.FormEvent<HTMLFormElement>) => {
+    const submit = (event: SyntheticEvent<HTMLFormElement>) => {
         event.preventDefault();
         void askQuestion(question);
     };
@@ -176,7 +177,7 @@ export default function ChatAssistant() {
                                 }
                                     >
                                         <Suspense fallback={<>{message.text}</>}>
-                                            <ReactMarkdown>{message.text}</ReactMarkdown>
+                                            <ReactMarkdown remarkPlugins={[remarkBreaks]}>{message.text}</ReactMarkdown>
                                         </Suspense>
                                     </div>
                         ))}

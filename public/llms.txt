@@ -1,8 +1,11 @@
 # Dhavalkumar Patel - Lead Mobile Engineer
 
+> Lead Mobile Engineer with 11+ years building enterprise mobile applications for Banking and Healthcare.
+
 **Website:** https://dhaval2404.com/
 **Email:** dhaval2404@hotmail.com
 **Role:** Lead Mobile Engineer
+**Resume:** https://dhaval2404.com/docs/dhavalkumar-patel-resume-2026.pdf
 
 ## Summary
 
@@ -27,9 +30,9 @@ Developed enterprise applications for Legal and Healthcare domains. Led system d
 - Worked on Healthcare applications adhering to HL7, HIPAA, and GDPR compliance
 - Implemented secure mobile practices (encryption, secure APIs, kiosk), reducing security issues
 - Automated CI/CD workflows, reducing build and release effort by 40%
-- Technologies: Android, Flutter, Firebase, GitHub Actions, Fastlane, Google Maps, In-App Purchase
+- Technologies: Android, Flutter, Firebase, GitHub Actions, Fastlane, Google Maps, In-App Purchase, Playwright, Play Store, App Store
 
-### Mobiquity Inc (Hexaware Technologies) — Senior Android Developer (Jun 2021 – Oct 2023)
+### Mobiquity Inc - India (Hexaware Technologies) — Senior Android Developer (Jun 2021 – Oct 2023)
 Engaged with Backbase through Mobiquity as a Sr. Android Developer on the Customer Success team delivering retail & business solutions for US banks.
 - Customized Backbase banking journeys and integrated with backend services
 - Developed reusable UI components and shared modules to accelerate feature delivery
@@ -59,23 +62,12 @@ Major in Electronics and Communication Engineering
 
 ## Tech Stack
 
-### Languages
-Kotlin, Java, Dart, JavaScript, TypeScript, Swift
-
-### Mobile UI
-Flutter, Android Native, Jetpack Compose, Kotlin Multiplatform, SwiftUI
-
-### Backend Development
-Spring Boot, Node.js, REST APIs, SQLite, MySQL, PostgreSQL
-
-### Testing & Quality
-JUnit, Mockito, Mockk, Espresso, Playwright, Firebase Test Lab, SonarQube, ktlint, detekt
-
-### Cloud & DevOps
-GitHub Actions, Fastlane, Docker, Firebase, Monitoring
-
-### Security
-OWASP, Encryption, Obfuscation, RASP, DexGuard, Secure Coding Practices, DRM
+- **Languages:** Kotlin, Java, Dart, JavaScript, TypeScript, Swift
+- **Mobile UI:** Flutter, Android Native, Jetpack Compose, Kotlin Multiplatform, SwiftUI
+- **Backend Development:** Spring Boot, Node.js, REST APIs, SQLite, MySQL, PostgreSQL
+- **Testing & Quality:** JUnit, Mockito, Mockk, Espresso, Playwright, Firebase Test Lab, SonarQube, ktlint, detekt
+- **Cloud & DevOps:** GitHub Actions, Fastlane, Docker, Firebase, Monitoring
+- **Security:** OWASP, Encryption, Obfuscation, RASP, DexGuard, Secure Coding Practices, DRM
 
 ## Featured Projects
 
@@ -91,7 +83,7 @@ Mobile banking app with features to manage finances while on the go.
 - Google Play: https://play.google.com/store/apps/details?id=com.eastern.bank&hl=en_IN
 - Website: https://www.easternbank.com/
 
-### Engage By Clarity
+### Engage by Clarity
 Tablet-based platform designed to improve inpatient care, streamline staff workflows, and reduce administrative stress.
 - Tech: Android, Kotlin, Jetpack Compose, Kiosk, Android MDM
 - Website: https://www.claritybhs.com/
