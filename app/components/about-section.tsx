@@ -43,7 +43,7 @@ export default function AboutSection() {
               <div
                 className={`mb-6 flex size-12 items-center justify-center rounded-xl ${area.color} transition-colors duration-300 group-hover:bg-primary`}
               >
-                <span className="text-3xl text-primary transition-colors group-hover:text-white">
+                <span className="text-3xl transition-colors group-hover:text-white">
                   <area.icon/>
                 </span>
               </div>
