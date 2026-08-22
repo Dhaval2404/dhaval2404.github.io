@@ -34,7 +34,7 @@ export default function ProjectsSection() {
                 {project.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700"
+                    className="rounded border border-slate-200 bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600"
                   >
                     {skill}
                   </span>

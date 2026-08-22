@@ -99,7 +99,7 @@ export default function NotFoundContent() {
           </div>
 
           <span
-            className="absolute bottom-0 right-0 p-8 text-6xl! text-primary opacity-10 rotate-12 pointer-events-none"
+            className="absolute bottom-0 right-0 p-8 text-primary opacity-10 rotate-12 pointer-events-none"
             aria-hidden="true"
           >
             <QuestionMarkIcon className="size-15"/>

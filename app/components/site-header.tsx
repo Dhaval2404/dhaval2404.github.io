@@ -6,6 +6,7 @@ import { navigationItems } from "./data/navigation";
 import Link from "next/link";
 import { EmailIcon } from "@/app/components/icons";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,10 +19,12 @@ export default function SiteHeader() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <a href="/#home" className="flex items-center gap-3">
           <div className="flex size-9 shrink-0 items-center justify-center overflow-hidden">
-            <img
-              src="/favicon.svg"
-              alt="Profile"
-              className="size-full object-cover"
+            <Image
+                src="/favicon.svg"
+                alt="Profile"
+                width={36}
+                height={36}
+                className="size-full object-contain"
             />
           </div>
           <span className="hidden text-lg font-semibold tracking-tight text-slate-heading sm:block">

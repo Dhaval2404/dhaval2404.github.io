@@ -3,9 +3,9 @@
 import {CSSProperties, Suspense, lazy, useEffect, useRef, useState, SyntheticEvent} from "react";
 import {APP_CONFIG} from "@/app/lib/config";
 import {Bot, SendHorizontal, X} from "lucide-react";
+import remarkBreaks from "remark-breaks";
 
 const ReactMarkdown = lazy(() => import("react-markdown"));
-import remarkBreaks from "remark-breaks";
 
 type Message = { sender: "user" | "assistant"; text: string };
 const chatEndpoint = `${APP_CONFIG.API_BASE_URL}/v1/chat`;

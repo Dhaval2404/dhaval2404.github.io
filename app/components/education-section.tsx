@@ -11,8 +11,8 @@ export default function EducationSection() {
       <div className="grid gap-12 lg:grid-cols-2">
         <div className="space-y-8">
           <div className="mb-8 flex items-center gap-3">
-            <span className="text-3xl! text-primary">
-              <BookOpenText/>
+            <span className="text-primary">
+              <BookOpenText className="size-8" />
             </span>
             <h2 className="text-3xl font-bold tracking-tight text-slate-heading">
               {educationData.title}
@@ -37,8 +37,8 @@ export default function EducationSection() {
         </div>
         <div >
           <div className="mb-8 flex items-center gap-3">
-            <span className="text-3xl! text-primary">
-              <WorkspacePremiumIcon className="size-8" />
+            <span className="text-primary">
+              <WorkspacePremiumIcon className="size-9" />
             </span>
             <h2 className="text-3xl font-bold tracking-tight text-slate-heading">
               {certificationsData.title}
@@ -56,7 +56,7 @@ export default function EducationSection() {
                 {certification.description}
               </p>
             </div>
-            <span className="absolute right-8 top-1/2 -translate-y-1/2 text-[120px]! opacity-5">
+            <span className="absolute right-8 top-1/2 -translate-y-1/2 opacity-5">
               <WorkspacePremiumIcon className="size-30" />
             </span>
           </article>

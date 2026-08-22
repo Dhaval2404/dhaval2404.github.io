@@ -6,6 +6,9 @@ import {APP_CONFIG} from "./lib/config";
 import {SITE_META} from "./lib/site-meta-config";
 
 import { Inter } from "next/font/google";
+import SiteHeader from "@/app/components/site-header";
+import SiteFooter from "@/app/components/site-footer";
+import ChatAssistant from "@/app/components/chat-assistant";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -21,7 +24,7 @@ export const metadata: Metadata = {
     description: SITE_META.DESCRIPTION,
     keywords: SITE_META.KEYWORDS.join(','),
     authors: [{name: SITE_META.AUTHOR}],
-    alternates: {canonical: siteUrl},
+    alternates: {canonical: APP_CONFIG.CANONICAL_URL},
     robots: "index,follow",
     openGraph: {
         type: "website",
@@ -61,7 +64,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-    themeColor: "#4285f4",
+    themeColor: "#2563eb",
     colorScheme: "light",
 };
 
@@ -96,7 +99,6 @@ export default function RootLayout({
     return (
         <html lang="en" className={inter.className}>
         <body>
-        {children}
         <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${APP_CONFIG.GOOGLE_ANALYTICS_ID}`}
             strategy="afterInteractive"
@@ -118,6 +120,10 @@ export default function RootLayout({
                 __html: JSON.stringify(structuredData),
             }}
         />
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+        <ChatAssistant />
         </body>
         </html>
     );
