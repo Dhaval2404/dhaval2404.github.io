@@ -41,8 +41,8 @@ export default function HeroSection() {
         <Reveal delay={0.2} className="pt-8">
           <div className="flex flex-wrap gap-4">
             <Link
-              href="/#projects"
-              className="inline-flex items-center gap-3 rounded-full bg-primary px-8 py-3.5 font-semibold text-white shadow-lg shadow-blue-500/20 transition-colors hover:bg-blue-600"
+                href="/#projects"
+                className="inline-flex items-center gap-3 rounded-full bg-primary px-8 py-3.5 font-semibold text-white shadow-lg shadow-blue-500/20 transition-colors hover:bg-blue-600"
             >
               View Projects <ArrowRight />
             </Link>

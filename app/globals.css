@@ -13,11 +13,22 @@
 
 .dark {
   color-scheme: dark;
-  --app-background: #0b1120;
-  --app-surface: #111a2e;
+  --app-background: #0B0B0C;
+  --app-surface: #151517;
   --app-heading: #f1f5f9;
   --app-body-text: #94a3b8;
   --app-border: #1e293b;
+  --color-slate-50: #fafafa;
+  --color-slate-100: #f4f4f5;
+  --color-slate-200: #e4e4e7;
+  --color-slate-300: #d4d4d8;
+  --color-slate-400: #a1a1aa;
+  --color-slate-500: #71717a;
+  --color-slate-600: #52525b;
+  --color-slate-700: #333338;
+  --color-slate-800: #1f1f23;
+  --color-slate-900: #161618;
+  --color-slate-950: #0c0c0e;
 }
 
 @theme inline {

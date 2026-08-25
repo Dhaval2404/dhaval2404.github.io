@@ -23,8 +23,8 @@ export default function ThemeToggle() {
       className="inline-flex size-11 items-center justify-center rounded-lg border border-border-light bg-white text-slate-heading transition-colors hover:bg-slate-50 dark:bg-slate-900 dark:hover:bg-slate-800"
     >
       <span aria-hidden="true">
-        <Sun className="hidden h-6 w-6 dark:block" />
-        <Moon className="block h-6 w-6 dark:hidden" />
+        <Sun className="hidden text-amber-300 h-6 w-6 dark:block" />
+        <Moon className="block h-6 w-6 text-zinc-600 dark:hidden" />
       </span>
     </button>
   );
