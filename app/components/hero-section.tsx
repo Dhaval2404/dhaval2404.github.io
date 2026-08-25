@@ -56,7 +56,7 @@ export default function HeroSection() {
           </div>
         </Reveal>
       </div>
-      <Reveal delay={0.3} y={32} className="w-full lg:w-auto">
+      <Reveal delay={0.3} y={32} className="relative flex w-full flex-1 justify-center lg:justify-end">
         <div className="relative flex w-full flex-1 justify-center lg:justify-end">
           <div
             className="absolute right-10 top-10 -z-10 aspect-square w-full max-w-md rounded-full bg-linear-to-tr from-blue-100 via-indigo-100 to-transparent blur-3xl dark:from-blue-500/15 dark:via-indigo-500/10"

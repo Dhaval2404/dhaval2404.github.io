@@ -34,7 +34,7 @@ export default function ChatAssistant() {
     const [messages, setMessages] = useState<Message[]>([
         {
             sender: "assistant",
-            text: "Hi! I'm Dhaval's AI Assistant. Ask me anything about his experience, skills, education, certifications or projects!",
+            text: "Hi! I'm Dhaval's AI Assistant.\nAsk me anything about his experience, skills, education, certifications or projects!",
         },
     ]);
     const inputRef = useRef<HTMLInputElement>(null);

@@ -2,13 +2,14 @@ import Link from "next/link";
 import {DownloadIcon, QuestionMarkIcon} from "@/app/components/icons";
 import {ArrowLeft} from "lucide-react";
 import {APP_CONFIG} from "@/app/lib/config";
+import Reveal from "@/app/components/motion/reveal";
 
 export default function NotFoundContent() {
   return (
     <section className="relative mx-auto flex max-w-7xl flex-col items-center gap-12 px-6 py-20 lg:flex-row lg:gap-20 lg:py-32">
       {/* Left Side: Content */}
       <div className="flex-1 space-y-8 flex flex-col items-center lg:items-start text-center lg:text-left">
-        <div className="space-y-4">
+        <Reveal>
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-100 px-3 py-1 w-fit dark:border-red-500/30 dark:bg-red-500/10">
             <span className="relative flex size-3" aria-hidden="true">
               <span className="absolute inline-flex size-full animate-ping rounded-full bg-red-400 opacity-75" />
@@ -18,7 +19,9 @@ export default function NotFoundContent() {
               Error 404: Page Not Found
             </span>
           </div>
+        </Reveal>
 
+        <Reveal delay={0.1}>
           <h1 className="text-5xl font-black leading-[1.1] tracking-tight text-slate-heading md:text-6xl lg:text-7xl">
             Page Not <br />
             <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
@@ -26,30 +29,33 @@ export default function NotFoundContent() {
             </span>
           </h1>
 
-          <p className="max-w-2xl text-lg font-medium text-slate-body">
-            The page you are looking for doesn&apos;t exist or has been moved.
+          <p className="mt-6 max-w-2xl text-lg font-medium text-slate-body">
+            The page you are looking for doesn&apos;t exist or has been moved.<br/>
             Let&apos;s get you back on track.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-3 rounded-full bg-primary px-8 py-3.5 font-semibold text-white shadow-lg shadow-blue-500/20 transition-colors hover:bg-blue-600"
-          >
-            <ArrowLeft /> Back to Home
-          </Link>
-          <a
-              href={APP_CONFIG.RESUME_PATH}
-              download
-              className="inline-flex items-center gap-3 rounded-full border border-slate-300 bg-slate-100 px-8 py-3.5 font-semibold text-slate-heading transition-colors hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700"
-          >
-            Download Resume <DownloadIcon className="size-6" />
-          </a>
-        </div>
+        <Reveal delay={0.2} className="w-fit pt-4">
+          <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-3 rounded-full bg-primary px-8 py-3.5 font-semibold text-white shadow-lg shadow-blue-500/20 transition-colors hover:bg-blue-600"
+            >
+              <ArrowLeft /> Back to Home
+            </Link>
+            <a
+                href={APP_CONFIG.RESUME_PATH}
+                download
+                className="inline-flex items-center gap-3 rounded-full border border-slate-300 bg-slate-100 px-8 py-3.5 font-semibold text-slate-heading transition-colors hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700"
+            >
+              Download Resume <DownloadIcon className="size-6" />
+            </a>
+          </div>
+        </Reveal>
       </div>
 
       {/* Right Side: Mockup */}
+      <Reveal delay={0.3} y={32} className="relative flex w-full flex-1 justify-center lg:justify-end">
       <div className="relative flex w-full flex-1 justify-center lg:justify-end">
         <div
           className="absolute right-10 top-10 -z-10 aspect-square w-full max-w-md rounded-full bg-linear-to-tr from-blue-100 via-indigo-100 to-transparent blur-3xl dark:from-blue-500/15 dark:via-indigo-500/10"
@@ -109,6 +115,7 @@ export default function NotFoundContent() {
           </span>
         </div>
       </div>
+      </Reveal>
     </section>
   );
 }

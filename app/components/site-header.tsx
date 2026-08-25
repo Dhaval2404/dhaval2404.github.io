@@ -80,7 +80,7 @@ export default function SiteHeader() {
                 className="size-full object-contain"
             />
           </div>
-          <span className="hidden text-lg font-semibold tracking-tight text-slate-heading sm:block">
+          <span className="hidden text-xl font-semibold tracking-tight text-slate-heading sm:block">
             Dhavalkumar Patel
           </span>
         </Link>
