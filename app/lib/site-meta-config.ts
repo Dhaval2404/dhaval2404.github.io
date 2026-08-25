@@ -2,8 +2,8 @@ import { APP_CONFIG } from "./config";
 
 export const SITE_META = {
   TITLE: "Dhavalkumar Patel - Lead Mobile Engineer",
-  DESCRIPTION:
-    "Building scalable mobile and backend solutions using Android, Kotlin Multiplatform, Flutter, and Spring Boot. Specialized in Banking and Healthcare platforms.",
+  DESCRIPTION: "Building scalable mobile and backend solutions using Android, Kotlin Multiplatform, Flutter, and Spring Boot. Specialized in Banking and Healthcare platforms.",
+  SHORT_DESCRIPTION: "Building scalable mobile and backend solutions using Android, Kotlin Multiplatform, Flutter, and Spring Boot.",
   KEYWORDS: [
     "Dhavalkumar Patel",
     "Lead Mobile Engineer",

@@ -1,5 +1,6 @@
 import { APP_CONFIG } from "@/app/lib/config";
 import { DownloadIcon, EmailIcon } from "@/app/components/icons";
+import Reveal from "./motion/reveal";
 
 export default function SiteFooter() {
   return (
@@ -8,36 +9,38 @@ export default function SiteFooter() {
       className="border-t border-border-light bg-surface-light"
     >
       <div className="mx-auto max-w-7xl px-6 py-20 text-center">
-        <h2 className="mb-6 text-4xl font-black tracking-tight text-slate-heading md:text-5xl">
-          Let&apos;s Build Enterprise Solutions That Scale
-        </h2>
-        <p className="mx-auto mb-12 max-w-2xl text-lg text-slate-body">
-          Open to conversations about mobile development, product engineering,
-          backend systems, and building software that solves real-world
-          problems.
-        </p>
-        <div className="mb-16 flex flex-col items-center justify-center gap-6 sm:flex-row">
-          <a
-            href={`mailto:${APP_CONFIG.SOCIAL.EMAIL}`}
-            className="flex w-full items-center justify-center gap-3 rounded-xl bg-primary px-8 py-4 font-bold text-white shadow-lg shadow-blue-500/20 transition-all hover:bg-blue-600 sm:w-auto"
-          >
-            <EmailIcon className="size-6" />
-            Send an Email
-          </a>
-          <a
-            href={APP_CONFIG.RESUME_PATH}
-            download
-            className="flex w-full items-center justify-center gap-3 rounded-xl bg-slate-800 px-8 py-4 font-bold text-white transition-all hover:bg-slate-700 sm:w-auto"
-          >
-            <DownloadIcon className="size-6" />
-            Download Resume
-          </a>
-        </div>
+        <Reveal>
+          <h2 className="mb-6 text-4xl font-black tracking-tight text-slate-heading md:text-5xl">
+            Let&apos;s Build Enterprise Solutions That Scale
+          </h2>
+          <p className="mx-auto mb-12 max-w-2xl text-lg text-slate-body">
+            Open to conversations about mobile development, product engineering,
+            backend systems, and building software that solves real-world
+            problems.
+          </p>
+          <div className="mb-16 flex flex-col items-center justify-center gap-6 sm:flex-row">
+            <a
+              href={`mailto:${APP_CONFIG.SOCIAL.EMAIL}`}
+              className="flex w-full items-center justify-center gap-3 rounded-xl bg-primary px-8 py-4 font-bold text-white shadow-lg shadow-blue-500/20 transition-all hover:bg-blue-600 sm:w-auto"
+            >
+              <EmailIcon className="size-6" />
+              Send an Email
+            </a>
+            <a
+              href={APP_CONFIG.RESUME_PATH}
+              download
+              className="flex w-full items-center justify-center gap-3 rounded-xl bg-slate-800 px-8 py-4 font-bold text-white transition-all hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600 sm:w-auto"
+            >
+              <DownloadIcon className="size-6" />
+              Download Resume
+            </a>
+          </div>
+        </Reveal>
         <div className="flex flex-col items-center justify-between gap-6 border-t border-border-light pt-10 md:flex-row">
           <p className="text-sm text-slate-500">{APP_CONFIG.COPYRIGHT}</p>
           <div className="flex gap-6">
             <a
-              className="text-slate-400 transition-colors hover:text-slate-600"
+              className="text-slate-400 transition-colors hover:text-slate-600 dark:hover:text-slate-300"
               href={APP_CONFIG.SOCIAL.TWITTER}
               rel="noopener noreferrer"
               target="_blank"
@@ -48,7 +51,7 @@ export default function SiteFooter() {
               </svg>
             </a>
             <a
-              className="text-slate-400 transition-colors hover:text-slate-600"
+              className="text-slate-400 transition-colors hover:text-slate-600 dark:hover:text-slate-300"
               href={APP_CONFIG.SOCIAL.LINKEDIN}
               rel="noopener noreferrer"
               target="_blank"
@@ -59,7 +62,7 @@ export default function SiteFooter() {
               </svg>
             </a>
             <a
-              className="text-slate-400 transition-colors hover:text-slate-600"
+              className="text-slate-400 transition-colors hover:text-slate-600 dark:hover:text-slate-300"
               href={APP_CONFIG.SOCIAL.GITHUB}
               rel="noopener noreferrer"
               target="_blank"

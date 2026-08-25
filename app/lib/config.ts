@@ -1,4 +1,5 @@
 export const APP_CONFIG = {
+  YEARS_OF_EXPERIENCE: "11+",
   API_BASE_URL: process.env.NEXT_PUBLIC_API_URL || "https://api.dhaval2404.com",
   SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || "https://dhaval2404.com",
   SOCIAL: {

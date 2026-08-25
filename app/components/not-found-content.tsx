@@ -9,12 +9,12 @@ export default function NotFoundContent() {
       {/* Left Side: Content */}
       <div className="flex-1 space-y-8 flex flex-col items-center lg:items-start text-center lg:text-left">
         <div className="space-y-4">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-100 px-3 py-1 w-fit">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-100 px-3 py-1 w-fit dark:border-red-500/30 dark:bg-red-500/10">
             <span className="relative flex size-3" aria-hidden="true">
               <span className="absolute inline-flex size-full animate-ping rounded-full bg-red-400 opacity-75" />
-              <span className="relative inline-flex size-3 rounded-full border-2 border-red-100 bg-red-500" />
+              <span className="relative inline-flex size-3 rounded-full border-2 border-red-100 bg-red-500 dark:border-slate-950" />
             </span>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-red-700">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-red-700 dark:text-red-400">
               Error 404: Page Not Found
             </span>
           </div>
@@ -42,7 +42,7 @@ export default function NotFoundContent() {
           <a
               href={APP_CONFIG.RESUME_PATH}
               download
-              className="inline-flex items-center gap-3 rounded-full border border-slate-300 bg-slate-100 px-8 py-3.5 font-semibold text-slate-heading transition-colors hover:bg-slate-200"
+              className="inline-flex items-center gap-3 rounded-full border border-slate-300 bg-slate-100 px-8 py-3.5 font-semibold text-slate-heading transition-colors hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700"
           >
             Download Resume <DownloadIcon className="size-6" />
           </a>
@@ -51,11 +51,14 @@ export default function NotFoundContent() {
 
       {/* Right Side: Mockup */}
       <div className="relative flex w-full flex-1 justify-center lg:justify-end">
-        <div className="absolute right-10 top-10 -z-10 aspect-square w-full max-w-md rounded-full bg-linear-to-tr from-blue-100 via-indigo-100 to-transparent blur-3xl" />
+        <div
+          className="absolute right-10 top-10 -z-10 aspect-square w-full max-w-md rounded-full bg-linear-to-tr from-blue-100 via-indigo-100 to-transparent blur-3xl dark:from-blue-500/15 dark:via-indigo-500/10"
+          aria-hidden="true"
+        />
         <div className="relative h-[400px] w-full max-w-[500px] overflow-hidden rounded-2xl border border-border-light bg-surface-light shadow-2xl">
           <div className="absolute inset-0 bg-grid-slate-100/50 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))]" />
 
-          <div className="flex gap-2 border-b border-border-light bg-slate-50 p-4">
+          <div className="flex gap-2 border-b border-border-light bg-slate-50 p-4 dark:bg-slate-900/70">
             <div className="flex gap-1.5">
               <span className="size-3 rounded-full bg-red-400" />
               <span className="size-3 rounded-full bg-yellow-400" />
@@ -66,29 +69,29 @@ export default function NotFoundContent() {
             </span>
           </div>
 
-          <div className="space-y-2 p-6 font-mono text-sm text-slate-600 relative z-10">
+          <div className="space-y-2 p-6 font-mono text-sm text-slate-600 dark:text-slate-300 relative z-10">
             <p>
-              <span className="text-purple-600">const</span>{" "}
+              <span className="text-purple-600 dark:text-purple-400">const</span>{" "}
               <span className="font-bold text-slate-heading">resolveRoute</span>{" "}
               = (path) =&gt; {"{"}
             </p>
             <p className="pl-4">
-              <span className="text-purple-600">if</span> (!routes.
-              <span className="text-blue-600">has</span>(path)) {"{"}
+              <span className="text-purple-600 dark:text-purple-400">if</span> (!routes.
+              <span className="text-blue-600 dark:text-blue-400">has</span>(path)) {"{"}
             </p>
             <p className="pl-8">
-              <span className="text-purple-600">return</span> {"{"}
+              <span className="text-purple-600 dark:text-purple-400">return</span> {"{"}
             </p>
             <p className="pl-12">
-              status: <span className="text-rose-600">404</span>,
+              status: <span className="text-rose-600 dark:text-rose-400">404</span>,
             </p>
             <p className="pl-12">
               error:{" "}
-              <span className="text-green-700">{"'PAGE_NOT_FOUND'"}</span>,
+              <span className="text-green-700 dark:text-green-400">{"'PAGE_NOT_FOUND'"}</span>,
             </p>
             <p className="pl-12">
               message:{" "}
-              <span className="text-green-700">{"'Destination unmapped'"}</span>
+              <span className="text-green-700 dark:text-green-400">{"'Destination unmapped'"}</span>
             </p>
             <p className="pl-8">{"};"}</p>
             <p className="pl-4">{"}"}</p>

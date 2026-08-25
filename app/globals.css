@@ -1,13 +1,33 @@
 @import "tailwindcss";
 
-@theme {
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+  --app-background: #f8fafc;
+  --app-surface: #ffffff;
+  --app-heading: #0f172a;
+  --app-body-text: #475569;
+  --app-border: #e2e8f0;
+}
+
+.dark {
+  color-scheme: dark;
+  --app-background: #0b1120;
+  --app-surface: #111a2e;
+  --app-heading: #f1f5f9;
+  --app-body-text: #94a3b8;
+  --app-border: #1e293b;
+}
+
+@theme inline {
   --color-primary: #2563eb;
-  --color-background-light: #f8fafc;
-  --color-surface-light: #ffffff;
+  --color-background-light: var(--app-background);
+  --color-surface-light: var(--app-surface);
   --color-accent-green: #10b981;
-  --color-slate-heading: #0f172a;
-  --color-slate-body: #475569;
-  --color-border-light: #e2e8f0;
+  --color-slate-heading: var(--app-heading);
+  --color-slate-body: var(--app-body-text);
+  --color-border-light: var(--app-border);
   --font-display: "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
 
@@ -59,6 +79,10 @@ body {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass-nav {
+  background: rgba(11, 17, 32, 0.82);
 }
 
 .bg-grid-slate-100\/50 {

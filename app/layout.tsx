@@ -38,7 +38,7 @@ export const metadata: Metadata = {
                 url: SITE_META.OG_IMAGE,
                 width: 1200,
                 height: 630,
-                alt: SITE_META.DESCRIPTION,
+                alt: SITE_META.SHORT_DESCRIPTION,
                 type: "image/png",
             },
         ],
@@ -64,9 +64,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-    themeColor: "#2563eb",
-    colorScheme: "light",
+    themeColor: [
+        {media: "(prefers-color-scheme: light)", color: "#2563eb"},
+        {media: "(prefers-color-scheme: dark)", color: "#0b1120"},
+    ],
+    colorScheme: "light dark",
 };
+
+const themeInitScript = `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.classList.add("dark")}}catch(e){}})();`;
 
 const structuredData = {
     "@context": "https://schema.org",
@@ -97,8 +102,15 @@ export default function RootLayout({
                                        children,
                                    }: Readonly<{ children: ReactNode }>) {
     return (
-        <html lang="en" className={inter.className}>
+        <html lang="en" className={inter.className} suppressHydrationWarning>
         <body>
+        <script dangerouslySetInnerHTML={{__html: themeInitScript}} />
+        <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-100 focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:font-semibold focus:text-white"
+        >
+            Skip to content
+        </a>
         <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${APP_CONFIG.GOOGLE_ANALYTICS_ID}`}
             strategy="afterInteractive"
@@ -128,3 +140,4 @@ export default function RootLayout({
         </html>
     );
 }
+

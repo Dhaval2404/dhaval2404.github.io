@@ -1,6 +1,6 @@
 "use client";
 
-import {CSSProperties, Suspense, lazy, useEffect, useRef, useState, SyntheticEvent} from "react";
+import {CSSProperties, Suspense, lazy, useCallback, useEffect, useRef, useState, SyntheticEvent} from "react";
 import {APP_CONFIG} from "@/app/lib/config";
 import {Bot, SendHorizontal, X} from "lucide-react";
 import remarkBreaks from "remark-breaks";
@@ -10,7 +10,7 @@ const ReactMarkdown = lazy(() => import("react-markdown"));
 type Message = { sender: "user" | "assistant"; text: string };
 const chatEndpoint = `${APP_CONFIG.API_BASE_URL}/v1/chat`;
 const sessionStorageKey = "dhaval-ai-session-id";
-const chatSuggestions = ["About", "Top skills", "Work Experience"];
+const chatSuggestions = ["About", "Top skills", "Work Experience", "Projects"];
 
 function getSessionId() {
     const existing = window.localStorage.getItem(sessionStorageKey);
@@ -38,10 +38,16 @@ export default function ChatAssistant() {
         },
     ]);
     const inputRef = useRef<HTMLInputElement>(null);
+    const fabButtonRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
         if (isOpen) inputRef.current?.focus();
     }, [isOpen]);
+
+    const closeChat = useCallback(() => {
+        setIsOpen(false);
+        fabButtonRef.current?.focus();
+    }, []);
 
     useEffect(() => {
         if (!isOpen || !window.matchMedia("(max-width: 639px)").matches) return;
@@ -71,10 +77,10 @@ export default function ChatAssistant() {
 
     useEffect(() => {
         const closeOnEscape = (event: KeyboardEvent) =>
-            event.key === "Escape" && setIsOpen(false);
+            event.key === "Escape" && closeChat();
         document.addEventListener("keydown", closeOnEscape);
         return () => document.removeEventListener("keydown", closeOnEscape);
-    }, []);
+    }, [closeChat]);
 
     const askQuestion = async (value: string) => {
         const message = value.trim();
@@ -135,7 +141,7 @@ export default function ChatAssistant() {
             {isOpen && (
                 <section
                     aria-label="Dhaval's AI Assistant"
-                    className="fixed inset-x-0 top-0 flex h-[var(--chat-height)] w-full translate-y-[var(--chat-offset-top)] flex-col overflow-hidden bg-white sm:static sm:mb-4 sm:block sm:h-auto sm:w-[calc(100vw-2.5rem)] sm:max-w-sm sm:translate-y-0 sm:rounded-2xl sm:border sm:border-border-light sm:shadow-2xl"
+                    className="fixed inset-x-0 top-0 flex h-[var(--chat-height)] w-full translate-y-[var(--chat-offset-top)] flex-col overflow-hidden bg-white sm:static dark:bg-slate-900 sm:mb-4 sm:block sm:h-auto sm:w-[calc(100vw-2.5rem)] sm:max-w-sm sm:translate-y-0 sm:rounded-2xl sm:border sm:border-border-light sm:shadow-2xl"
                     style={{
                         "--chat-height": mobileViewport.height,
                         "--chat-offset-top": mobileViewport.offsetTop,
@@ -156,7 +162,7 @@ export default function ChatAssistant() {
                         <button
                             type="button"
                             aria-label="Close chat"
-                            onClick={() => setIsOpen(false)}
+                            onClick={closeChat}
                             className="inline-flex size-9 items-center justify-center rounded-full hover:bg-white/15"
                         >
               <X aria-hidden="true" />
@@ -165,7 +171,7 @@ export default function ChatAssistant() {
                     <div
                         aria-live="polite"
                         role="log"
-                        className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto bg-slate-50 p-4 text-sm sm:h-82 sm:flex-none"
+                        className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto bg-slate-50 p-4 text-sm dark:bg-slate-950 sm:h-82 sm:flex-none"
                     >
                         {messages.map((message, index) => (
                             <div
@@ -173,7 +179,7 @@ export default function ChatAssistant() {
                                 className={
                                     message.sender === "user"
                                         ? "max-w-[88%] self-end rounded-2xl rounded-br-md bg-primary px-4 py-3 leading-relaxed text-white shadow-sm"
-                                        : "max-w-[88%] self-start rounded-2xl rounded-bl-md bg-white px-4 py-3 leading-relaxed text-slate-700 shadow-sm"
+                                        : "max-w-[88%] self-start rounded-2xl rounded-bl-md bg-white px-4 py-3 leading-relaxed text-slate-700 shadow-sm dark:bg-slate-800 dark:text-slate-200"
                                 }
                                     >
                                         <Suspense fallback={<>{message.text}</>}>
@@ -183,12 +189,20 @@ export default function ChatAssistant() {
                         ))}
                         {isLoading && (
                             <div
-                                className="max-w-[88%] self-start rounded-2xl rounded-bl-md bg-white px-4 py-3 text-slate-700 shadow-sm">
-                                Thinking...
+                                className="flex items-center gap-1.5 self-start rounded-2xl rounded-bl-md bg-white px-4 py-3.5 shadow-sm dark:bg-slate-800"
+                                aria-label="Assistant is typing"
+                                role="status">
+                                {[0, 1, 2].map((dot) => (
+                                    <span
+                                        key={dot}
+                                        className="size-2 animate-bounce rounded-full bg-slate-400 dark:bg-slate-500"
+                                        style={{animationDelay: `${dot * 150}ms`, animationDuration: "0.9s"}}
+                                    />
+                                ))}
                             </div>
                         )}
                     </div>
-                    <div className="shrink-0 border-t border-border-light bg-white p-4">
+                    <div className="shrink-0 border-t border-border-light bg-white p-4 dark:bg-slate-900">
                         <div className="mb-3 flex gap-2 overflow-x-auto pb-1">
                             {chatSuggestions.map((suggestion) => (
                                 <button
@@ -196,7 +210,7 @@ export default function ChatAssistant() {
                                     type="button"
                                     onClick={() => void askQuestion(suggestion)}
                                     disabled={isLoading}
-                                    className="whitespace-nowrap rounded-full border border-blue-200 bg-blue-50 px-3 py-1.5 text-xs font-semibold text-primary transition-colors hover:bg-blue-100 disabled:opacity-60"
+                                    className="whitespace-nowrap rounded-full border border-blue-200 bg-blue-50 px-3 py-1.5 text-xs font-semibold text-primary transition-colors hover:bg-blue-100 disabled:opacity-60 dark:border-blue-500/30 dark:bg-blue-500/10 dark:hover:bg-blue-500/20"
                                 >
                                     {suggestion}
                                 </button>
@@ -215,7 +229,7 @@ export default function ChatAssistant() {
                                 disabled={isLoading}
                                 placeholder="Ask a question..."
                                 required
-                                className="min-w-0 flex-1 caret-slate-900 rounded-full border-slate-300 px-4 py-2.5 text-sm focus:border-primary focus:ring-primary appearance-none bg-clip-padding"
+                                className="min-w-0 flex-1 caret-slate-900 rounded-full border-slate-300 bg-slate-100 px-4.5 py-2.5 dark:caret-white dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 text-sm focus:border-primary focus:ring-primary appearance-none bg-clip-padding"
                             />
                             <button
                                 type="submit"
@@ -230,6 +244,7 @@ export default function ChatAssistant() {
                 </section>
             )}
             <button
+                ref={fabButtonRef}
                 type="button"
                 onClick={() => setIsOpen((open) => !open)}
                 aria-expanded={isOpen}
