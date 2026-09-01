@@ -1,4 +1,4 @@
-name: Deploy on Production Website
+name: Deploy on Production Server
 
 on:
   workflow_dispatch:

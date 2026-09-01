@@ -109,7 +109,7 @@ export default function HeroSection() {
             </div>
 
             <svg
-              className="absolute bottom-8 right-8 size-16 rotate-12 text-primary opacity-10"
+              className="absolute bottom-8 right-8 size-16 rotate-12 text-primary  dark:text-gray-400 opacity-10"
               viewBox="0 -960 960 960"
               fill="currentColor"
               aria-hidden="true"
